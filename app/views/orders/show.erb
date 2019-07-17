@@ -1,0 +1,33 @@
+<nav>
+        <a href="/">Home</a>
+        <br>
+        <a href="/about">About</a>
+ </nav>
+
+<h1>Order Summary</h1>
+
+<h2><%=@order.name%></h2>
+
+<ol>
+<% @order.items.each do |item|%>
+<li><%=item.name%>, <%=item.price%></li>
+<% end %>
+</ol>
+
+<h3>Total:</h3>
+<h3><%= @order.items.sum(:price)%></h3>
+
+<!--edit button-->
+<form method = "get" action = "/orders/<%=@order.id%>/edit">
+    <input type = "submit" value = "Edit Your Order">
+</form>
+<!-- delete button -->
+
+<form method = "POST" action = "/orders/<%=@order.id%>">
+<input id="hidden" type="hidden" name="_method" value="DELETE">
+<input type="submit" value="Delete This Order">
+</form>
+
+<form method = "get" action = '/orders/thankyou'>
+<input type="submit" value="Submit Order">
+</form>

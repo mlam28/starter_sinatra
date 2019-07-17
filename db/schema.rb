@@ -14,22 +14,16 @@ ActiveRecord::Schema.define(version: 2019_07_17_155003) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.decimal "price", precision: 0, scale: 2
+    t.float "price"
   end
 
   create_table "order_items", force: :cascade do |t|
+    t.integer "order_id"
     t.integer "item_id"
   end
 
-  create_table "order_users", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "order_items_id"
-  end
-
-  create_table "users", force: :cascade do |t|
+  create_table "orders", force: :cascade do |t|
     t.string "name"
-    t.date "birthday"
-    t.string "favorite_food"
   end
 
 end

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+    <head>
+        <title>Edit an Order</title>
+    </head>
+
+    <body>
+        <h1>Edit an Order</h1>
+    
+        <form action = "/orders/<%=@order.id%>" method = "post">
+        <input type="hidden" id="hidden" name="_method" value="patch">
+        <label>Name:</label>
+        <br>
+        <input type="text" name = "name" value="<%=@order.name%>">
+        <br>
+            <% @items.each do |item| %>
+            <br>
+                <input type = "checkbox" id ="<%=item.id%>" name = "items[]"  value = "<%=item.id%>" <%= 'checked' if @order.items.include?(item)%> ><%=item.name%>, $<%=item.price%></input>
+                <br>
+            <% end %>
+            <br>
+            <input type = "submit" value = "Save Changes!">
+        </form>
+        
+    </body>
+
+</html>
