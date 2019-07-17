@@ -1,8 +1,21 @@
-<h1>Menu</h1>
+<!DOCTYPE html>
 
-<% @items.each do |item| %>
-<ul> 
-    <li><%=item.name%>, $<%=item.price%></li>
-</ul>
+    <head>
+        <title>Menu</title>
+    </head>
 
-<h2>Click here to place an order!</h2>
+    <body>
+        <h1>Menu</h1>
+
+        <% @items.each do |item| %>
+            <ul> 
+                <li><%=item.name%>, $<%=item.price%></li>
+            </ul>
+        <% end %>
+
+        <form action = "/order/new" method = "GET">
+            <input type = "submit" value = "Click here to place an order!">
+        </form>
+    </body>
+
+</html>

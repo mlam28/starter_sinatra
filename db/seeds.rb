@@ -12,7 +12,7 @@ Item.create(name: "Steak", price: 16.50)
 
 
 michelle = User.create(name: "Michelle", birthday: 1996/01/30, favorite_food: "cookies")
-User.create(name: "Ashley", favorite_food: "eggs")
+User.create(name: "Ashley", favorite_food: "pizza")
 
 order1 = OrderItem.create(item_id: [1, 2, 3])
 michelleorder1 = OrderUser.create(order_items_id: 1, user_id: 1)

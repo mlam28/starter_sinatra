@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+    <head>
+        <title>Place and Order</title>
+    </head>
+
+    <body>
+        <h1>Order</h1>
+
+        <form action = "" method = "">
+            <% @items.each do |item| %>
+                <input type = "checkbox" name = "" value = "">
+                <ul> 
+                    <li><%=item.name%>, $<%=item.price%></li>
+                </ul>
+            <% end %>
+        </form>
+
+        <form action = "/order/new" method = "GET">
+            <input type = "submit" value = "Click here to place an order!">
+        </form>
+    </body>
+
+</html>
